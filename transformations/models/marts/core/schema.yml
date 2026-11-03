@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: fct_daily_pool_metrics
+    description: "Daily aggregated metrics: volume, fees, swap count, and mint/burn activity."
+    columns:
+      - name: metric_date
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_pool_liquidity_depth
+    description: "Net liquidity depth grouped by active tick ranges."
+    columns:
+      - name: tick_lower
+        tests:
+          - not_null
+      - name: tick_upper
+        tests:
+          - not_null

@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# dbt artifacts
+transformations/target/
+transformations/dbt_packages/
+transformations/logs/
+
+# Data Lakehouse & Local storage
+# Keep directory structures via .gitkeep, ignore generated datasets
+data/raw/**/*.parquet
+data/raw/**/*.csv
+data/dune/*.csv
+data/lakehouse/*.duckdb*
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# Testing & Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Logs
+logs/
+*.log

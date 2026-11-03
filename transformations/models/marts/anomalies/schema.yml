@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fct_wash_trades
+    description: "Identifies potential wash-trading, bot bursts, and circular swaps using window heuristics."
+    columns:
+      - name: swap_id
+        tests:
+          - unique
+          - not_null
+      - name: is_round_trip_wash
+        tests:
+          - not_null
+      - name: is_anomaly_flagged
+        tests:
+          - not_null

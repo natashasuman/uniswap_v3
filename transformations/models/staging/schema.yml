@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: stg_uniswap_swaps
+    description: "Normalized staging table for Uniswap V3 Swap events read directly from raw Parquet partitions."
+    columns:
+      - name: swap_id
+        description: "Composite primary key: transaction_hash and log_index"
+        tests:
+          - unique
+          - not_null
+      - name: block_number
+        tests:
+          - not_null
+      - name: sender
+        tests:
+          - not_null
+      - name: recipient
+        tests:
+          - not_null
+
+  - name: stg_uniswap_mints
+    description: "Normalized staging table for Uniswap V3 Mint (liquidity addition) events."
+    columns:
+      - name: mint_id
+        description: "Composite primary key: transaction_hash and log_index"
+        tests:
+          - unique
+          - not_null
+      - name: block_number
+        tests:
+          - not_null
+
+  - name: stg_uniswap_burns
+    description: "Normalized staging table for Uniswap V3 Burn (liquidity removal) events."
+    columns:
+      - name: burn_id
+        description: "Composite primary key: transaction_hash and log_index"
+        tests:
+          - unique
+          - not_null
+      - name: block_number
+        tests:
+          - not_null

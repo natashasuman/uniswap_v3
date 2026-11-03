@@ -1,0 +1,9 @@
+uniswap_v3:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../data/lakehouse/uniswap_v3.duckdb"
+      threads: 4
+      extensions:
+        - parquet
